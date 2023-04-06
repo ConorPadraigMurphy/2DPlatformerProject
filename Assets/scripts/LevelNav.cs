@@ -9,12 +9,10 @@ public class LevelNav : MonoBehaviour
     {
 
     }
-
+    [SerializeField] public string gotoscene;
     public void LoadScene()
     {
-
-        SceneManager.LoadScene("2ndPlatformerScene");
-
+        SceneManager.LoadScene(gotoscene);
     }
 
     // Update is called once per frame

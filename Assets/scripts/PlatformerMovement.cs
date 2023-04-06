@@ -7,12 +7,11 @@ public class PlatformerMovement : MonoBehaviour
 
     [SerializeField] float runSpeed = 5;
     [SerializeField] float jumpSpeed = 5;
-    float xBound = 100f;
+    float xBound = 112f;
     float yBound = 100f;
     public Vector3 respawn;
     public GameObject fallDetector;
     public Rigidbody2D rb;
-    public PlayerHealth playerHealth;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,10 +28,9 @@ public class PlatformerMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-
         if (collision.tag == "FallenOffmap")
         {
-            playerHealth.damagedealt(1);
+            GameManager.Instance.Damagedealt(1);
             transform.position = respawn;
         }
     }
@@ -46,6 +44,7 @@ public class PlatformerMovement : MonoBehaviour
         float xPosition = Mathf.Clamp(transform.position.x + xOffset, -xBound, xBound);
         transform.position = new Vector3(xPosition, transform.position.y, transform.position.z);
         fallDetector.transform.position = new Vector2(transform.position.x, fallDetector.transform.position.y);
+
         if (Input.GetKeyDown(KeyCode.Space) == true && isGrounded == true)
         {
             Vector2 jumpVelToAdd = new Vector2(0f, jumpSpeed);

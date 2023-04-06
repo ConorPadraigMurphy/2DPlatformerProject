@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
+
+    [SerializeField] int Damage;
     // Start is called before the first frame update
     public PlayerHealth playerHealth;
     void Start()
@@ -15,7 +17,7 @@ public class EnemyAttack : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            playerHealth.damagedealt(1);
+            GameManager.Instance.Damagedealt(Damage);
             Debug.Log("Attacked Player - Trigger");
         }
     }
