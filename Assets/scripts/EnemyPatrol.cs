@@ -13,6 +13,7 @@ public class EnemyPatrol : MonoBehaviour
     [SerializeField] float Leftpoint  = 0f;
 
 
+
     void Update()
     {
         if (dirRight)

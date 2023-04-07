@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 1278938159889449408}
   - component: {fileID: 1278938159889449409}
   - component: {fileID: 1278938159889449412}
+  - component: {fileID: 1905896806081284265}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -228,7 +229,6 @@ MonoBehaviour:
   respawn: {x: 0, y: 0, z: 0}
   fallDetector: {fileID: 0}
   rb: {fileID: 1278938159889449408}
-  playerHealth: {fileID: 1278938159889449412}
   isGrounded: 1
 --- !u!114 &1278938159889449412
 MonoBehaviour:
@@ -244,3 +244,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxhealth: 6
+--- !u!95 &1905896806081284265
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278938159889449406}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

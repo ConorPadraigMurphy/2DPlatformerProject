@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class PlatformerMovement : MonoBehaviour
 {
-
-    [SerializeField] float runSpeed = 5;
-    [SerializeField] float jumpSpeed = 5;
+    private bool dirRight = true;
+    [SerializeField] float runSpeed = 5f;
+    [SerializeField] float runSpeedBoost = 10f;
+    [SerializeField] float jumpSpeed = 5f;
     float xBound = 112f;
     float yBound = 100f;
     public Vector3 respawn;
     public GameObject fallDetector;
+
+    //private Animation animate;
     public Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
+        //animate = gameObject.GetComponent<Animation>();
         rb = GetComponent<Rigidbody2D>();
         respawn = transform.position;
     }
@@ -35,10 +39,35 @@ public class PlatformerMovement : MonoBehaviour
         }
     }
 
+    public void SpeedBoostActivated()
+    {
+        //Coded in video
+        runSpeed += runSpeedBoost;
+        StartCoroutine(SpeedBoostDeactivate());
+    }
+
+    IEnumerator SpeedBoostDeactivate()
+    {
+        //coded in video
+        yield return new WaitForSeconds(2.0f);
+        runSpeed -= runSpeedBoost;
+    }
+
+
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.D) == true)
+        {
+            transform.localScale = new Vector2(1.5f, 1.5f);
+        }
+
+        else if (Input.GetKeyDown(KeyCode.A) == true)
+        {
+            transform.localScale = new Vector2(-1.5f, 1.5f);
+        }
+
         float horizontalInput = Input.GetAxis("Horizontal");
         float xOffset = horizontalInput * runSpeed * Time.deltaTime;
         float xPosition = Mathf.Clamp(transform.position.x + xOffset, -xBound, xBound);
@@ -47,10 +76,10 @@ public class PlatformerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) == true && isGrounded == true)
         {
+            //animate.Play("Jump");
             Vector2 jumpVelToAdd = new Vector2(0f, jumpSpeed);
             rb.velocity += jumpVelToAdd;
             isGrounded = false;
-
         }
     }
 }
