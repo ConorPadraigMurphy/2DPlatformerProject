@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -86,6 +84,6 @@ public class GameManager : MonoBehaviour
     public void updateScore(int scoreToAdd)
     {
         score += scoreToAdd;
-        scoreText.text = "Score : " + score;
+        scoreText.text = " " + score;
     }
 }

@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class CoinPickUp : MonoBehaviour
 {
@@ -16,6 +13,7 @@ public class CoinPickUp : MonoBehaviour
     {
         if (coin.gameObject.tag == "Player")
         {
+            AudioManager.Instance.PlaycoinPickup();
             Debug.Log("Coin Collected");
             Destroy(gameObject);
             GameManager.updateScore(1);

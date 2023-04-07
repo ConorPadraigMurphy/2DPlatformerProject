@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StompEnemy : MonoBehaviour
@@ -10,6 +8,7 @@ public class StompEnemy : MonoBehaviour
 
         if (collision.gameObject.tag == "EnemyHead")
         {
+            AudioManager.Instance.PlayEnemyKill();
             Debug.Log("I just hit " + collision.gameObject.name);
             Debug.Log("STOMP");
             Destroy(collision.gameObject);

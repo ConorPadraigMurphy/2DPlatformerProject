@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class Key : MonoBehaviour
 {
@@ -11,6 +8,7 @@ public class Key : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            AudioManager.Instance.KeyPickup();
             Dooropen.Open();
             Debug.Log("Key triggered, Door opened");
             gameObject.SetActive(false);

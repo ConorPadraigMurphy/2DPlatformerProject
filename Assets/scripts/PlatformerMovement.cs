@@ -1,17 +1,17 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlatformerMovement : MonoBehaviour
 {
     private bool dirRight = true;
     [SerializeField] float runSpeed = 5f;
-    [SerializeField] float runSpeedBoost = 10f;
+    [SerializeField] float runSpeedBoost = 2f;
     [SerializeField] float jumpSpeed = 5f;
     float xBound = 112f;
     float yBound = 100f;
-    public Vector3 respawn;
-    public GameObject fallDetector;
+    private Vector3 respawn;
+    [SerializeField] GameObject fallDetector;
+    [SerializeField] Animator animate;
 
     //private Animation animate;
     public Rigidbody2D rb;
@@ -42,6 +42,7 @@ public class PlatformerMovement : MonoBehaviour
     public void SpeedBoostActivated()
     {
         //Coded in video
+        AudioManager.Instance.PlayPowerUpPickup();
         runSpeed += runSpeedBoost;
         StartCoroutine(SpeedBoostDeactivate());
     }
@@ -49,7 +50,7 @@ public class PlatformerMovement : MonoBehaviour
     IEnumerator SpeedBoostDeactivate()
     {
         //coded in video
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(5.0f);
         runSpeed -= runSpeedBoost;
     }
 
@@ -61,14 +62,17 @@ public class PlatformerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D) == true)
         {
             transform.localScale = new Vector2(1.5f, 1.5f);
+
         }
 
         else if (Input.GetKeyDown(KeyCode.A) == true)
         {
             transform.localScale = new Vector2(-1.5f, 1.5f);
+
         }
 
-        float horizontalInput = Input.GetAxis("Horizontal");
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        animate.SetBool("isRunning", horizontalInput != 0);
         float xOffset = horizontalInput * runSpeed * Time.deltaTime;
         float xPosition = Mathf.Clamp(transform.position.x + xOffset, -xBound, xBound);
         transform.position = new Vector3(xPosition, transform.position.y, transform.position.z);

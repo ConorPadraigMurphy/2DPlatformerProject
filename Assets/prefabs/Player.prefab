@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1278938158114348501}
   - component: {fileID: 1278938158114348503}
   - component: {fileID: 1278938158114348502}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Feet
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0002475083, y: -0.3617183}
+  m_Offset: {x: -0.00024751574, y: -0.3617183}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -58,7 +58,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.31159556, y: 0.018404722}
+  m_Size: {x: 0.25151408, y: 0.018404722}
   m_EdgeRadius: 0
 --- !u!114 &1278938158114348503
 MonoBehaviour:
@@ -98,7 +98,6 @@ GameObject:
   - component: {fileID: 1278938159889449411}
   - component: {fileID: 1278938159889449408}
   - component: {fileID: 1278938159889449409}
-  - component: {fileID: 1278938159889449412}
   - component: {fileID: 1905896806081284265}
   m_Layer: 0
   m_Name: Player
@@ -188,8 +187,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00518322, y: -0.021584194}
-  m_Size: {x: 0.6256046, y: 0.6256048}
+  m_Offset: {x: -0.00022657713, y: -0.012549679}
+  m_Size: {x: 0.49792975, y: 0.5224911}
   m_Direction: 0
 --- !u!50 &1278938159889449408
 Rigidbody2D:
@@ -225,25 +224,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 7
+  runSpeedBoost: 2
   jumpSpeed: 10
-  respawn: {x: 0, y: 0, z: 0}
   fallDetector: {fileID: 0}
+  animate: {fileID: 1905896806081284265}
   rb: {fileID: 1278938159889449408}
   isGrounded: 1
---- !u!114 &1278938159889449412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1278938159889449406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f3991b25038f2b4094ff64f0d8359a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
-  maxhealth: 6
 --- !u!95 &1905896806081284265
 Animator:
   serializedVersion: 5
@@ -254,7 +240,7 @@ Animator:
   m_GameObject: {fileID: 1278938159889449406}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 65dcb461f673c1c4688cd59386c53e2f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
