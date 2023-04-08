@@ -54,8 +54,6 @@ public class PlatformerMovement : MonoBehaviour
         runSpeed -= runSpeedBoost;
     }
 
-
-
     // Update is called once per frame
     void Update()
     {

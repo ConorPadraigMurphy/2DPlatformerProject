@@ -11,6 +11,5 @@ public class BounceOffHead : MonoBehaviour
         {
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * springBoost, ForceMode2D.Impulse);
         }
-
     }
 }

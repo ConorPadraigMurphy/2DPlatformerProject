@@ -3,7 +3,6 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
 
-
     [SerializeField] private AudioSource coinPickup;
     [SerializeField] private AudioSource buttonClick;
     [SerializeField] private AudioSource enemyKill;

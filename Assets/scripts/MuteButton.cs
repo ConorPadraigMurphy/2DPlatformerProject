@@ -9,13 +9,12 @@ public class MuteButton : MonoBehaviour
 
     public void Click()
     {
-        AudioManager.Instance.PlayButtonClick();
         AudioManager.Instance.Togglemute();
         AudioManager.Instance.PlayButtonClick();
+        AudioManager.Instance.Togglemute();
 
         if (AudioManager.Instance.muted == true)
         {
-
             buttonImage.sprite = mutedSprite;
         }
         else

@@ -20,11 +20,4 @@ public class CoinPickUp : MonoBehaviour
             Debug.Log(GameManager.score);
         }
     }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

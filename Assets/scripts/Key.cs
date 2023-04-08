@@ -14,6 +14,4 @@ public class Key : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-
-
 }
