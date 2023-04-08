@@ -16,8 +16,8 @@ public class GameManager : MonoBehaviour
     public Image[] hearts;
     public int score;
     private bool invulnerability = false;
-
     public TextMeshProUGUI scoreText;
+
     private void Awake()
     {
         if (Instance != null)
@@ -25,7 +25,6 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
@@ -59,13 +58,21 @@ public class GameManager : MonoBehaviour
                 hearts[i].sprite = emptyHeart;
             }
 
-            if (SceneManager.GetActiveScene().name == "Level1" || SceneManager.GetActiveScene().name == "Level2" || SceneManager.GetActiveScene().name == "Level3")
+            if (SceneManager.GetActiveScene().name == "Level1" || SceneManager.GetActiveScene().name == "Level2"
+            || SceneManager.GetActiveScene().name == "Level3" || SceneManager.GetActiveScene().name == "TutorialLevel")
             {
                 canvas.SetActive(true);
             }
             else
             {
                 canvas.SetActive(false);
+            }
+
+            if (SceneManager.GetActiveScene().name == "MainMenu")
+            {
+                health = 6;
+                score = 0;
+                scoreText.text = "  " + score;
             }
         }
     }

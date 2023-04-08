@@ -78,7 +78,6 @@ public class PlatformerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) == true && isGrounded == true)
         {
-            //animate.Play("Jump");
             Vector2 jumpVelToAdd = new Vector2(0f, jumpSpeed);
             rb.velocity += jumpVelToAdd;
             isGrounded = false;

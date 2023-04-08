@@ -27,13 +27,11 @@ public class EnemyFaller : MonoBehaviour
         if (transform.position.y >= Highpoint)
         {
             dirDown = true;
-            downSpeed = downSpeed;
         }
 
         if (transform.position.y <= Lowpoint)
         {
             dirDown = false;
-            upSpeed = upSpeed;
         }
 
     }
