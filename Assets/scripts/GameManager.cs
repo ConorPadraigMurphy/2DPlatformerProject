@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class GameManager : MonoBehaviour
     public Sprite fullHeart;
     public Image[] hearts;
     public int score;
+    private bool invulnerability = false;
 
     public TextMeshProUGUI scoreText;
     private void Awake()
@@ -70,8 +72,14 @@ public class GameManager : MonoBehaviour
 
     public void Damagedealt(int damage)
     {
-        health -= damage;
-
+        //Only if the player is not invulnerable will they take damage to prevent taking more than one damage if you collid into the enemy multiple times very quickly
+        if (!invulnerability)
+        {
+            AudioManager.Instance.Hurt();
+            health -= damage;
+            StartCoroutine(DamageCooldown());
+        }
+        //If the players health is less than or equal to zero reset the palyers stats
         if (health <= 0)
         {
             health = 6;
@@ -81,8 +89,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    IEnumerator DamageCooldown()
+    {
+        //makes the player invulnerable for a a second.
+        invulnerability = true;
+        yield return new WaitForSeconds(1f);
+        invulnerability = false;
+    }
+
     public void updateScore(int scoreToAdd)
     {
+        //Updates the score UI for the player
         score += scoreToAdd;
         scoreText.text = " " + score;
     }

@@ -7611,7 +7611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7569566454554755070, guid: a5c38dfa3784fbd408cae9a1c313178d, type: 3}
       propertyPath: speed
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7569566454554755070, guid: a5c38dfa3784fbd408cae9a1c313178d, type: 3}
       propertyPath: Leftpoint
@@ -11979,7 +11979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7569566454554755070, guid: a5c38dfa3784fbd408cae9a1c313178d, type: 3}
       propertyPath: speed
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7569566454554755070, guid: a5c38dfa3784fbd408cae9a1c313178d, type: 3}
       propertyPath: Leftpoint

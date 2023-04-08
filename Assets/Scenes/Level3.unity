@@ -3192,6 +3192,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Princess2
       objectReference: {fileID: 0}
+    - target: {fileID: 7488680511487936317, guid: 87f1a834c8fcf9e4db6b80337e3f2dcb, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87f1a834c8fcf9e4db6b80337e3f2dcb, type: 3}
 --- !u!4 &683921103 stripped
@@ -10088,6 +10092,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4244138726786009240, guid: 4c08edd45200eaf45921547d358b24db, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4244138726786009241, guid: 4c08edd45200eaf45921547d358b24db, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -11885,7 +11893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 496022447}
-  xMin: -1
+  xMin: 0
   xMax: 100
   yMin: 0
   yMax: 15

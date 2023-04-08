@@ -6813,11 +6813,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7156462631786051792, guid: bd5f2c0c31a72df42aa12db62050ca60, type: 3}
       propertyPath: Leftpoint
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7156462631786051792, guid: bd5f2c0c31a72df42aa12db62050ca60, type: 3}
       propertyPath: Rightpoint
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7156462631786051793, guid: bd5f2c0c31a72df42aa12db62050ca60, type: 3}
       propertyPath: m_RootOrder
@@ -7906,14 +7906,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1746593145}
     m_Modifications:
-    - target: {fileID: 7156462631668918023, guid: bd5f2c0c31a72df42aa12db62050ca60, type: 3}
-      propertyPath: Damage
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7156462631668918023, guid: bd5f2c0c31a72df42aa12db62050ca60, type: 3}
-      propertyPath: playerHealth
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7156462631786051793, guid: bd5f2c0c31a72df42aa12db62050ca60, type: 3}
       propertyPath: m_RootOrder
       value: 0
