@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
         {
             health = 6;
             score = 0;
-            scoreText.text = "Score : " + score;
+            scoreText.text = "  " + score;
             SceneManager.LoadSceneAsync("MainMenu");
         }
     }

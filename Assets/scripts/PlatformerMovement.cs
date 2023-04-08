@@ -62,20 +62,18 @@ public class PlatformerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D) == true)
         {
             transform.localScale = new Vector2(1.5f, 1.5f);
-
         }
 
         else if (Input.GetKeyDown(KeyCode.A) == true)
         {
             transform.localScale = new Vector2(-1.5f, 1.5f);
-
         }
 
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         animate.SetBool("isRunning", horizontalInput != 0);
         float xOffset = horizontalInput * runSpeed * Time.deltaTime;
-        float xPosition = Mathf.Clamp(transform.position.x + xOffset, -xBound, xBound);
-        transform.position = new Vector3(xPosition, transform.position.y, transform.position.z);
+        float xPosition = Mathf.Clamp(rb.position.x + xOffset, -xBound, xBound);
+        rb.position = new Vector2(xPosition, rb.position.y);
         fallDetector.transform.position = new Vector2(transform.position.x, fallDetector.transform.position.y);
 
         if (Input.GetKeyDown(KeyCode.Space) == true && isGrounded == true)
