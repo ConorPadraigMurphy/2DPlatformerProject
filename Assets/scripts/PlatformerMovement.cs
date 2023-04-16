@@ -69,8 +69,10 @@ public class PlatformerMovement : MonoBehaviour
 
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         animate.SetBool("isRunning", horizontalInput != 0);
+        
         float xOffset = horizontalInput * runSpeed * Time.deltaTime;
         float xPosition = Mathf.Clamp(rb.position.x + xOffset, -xBound, xBound);
+        
         rb.position = new Vector2(xPosition, rb.position.y);
         fallDetector.transform.position = new Vector2(transform.position.x, fallDetector.transform.position.y);
 

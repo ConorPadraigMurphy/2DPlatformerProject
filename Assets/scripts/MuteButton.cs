@@ -9,9 +9,9 @@ public class MuteButton : MonoBehaviour
 
     public void Click()
     {
-        AudioManager.Instance.Togglemute();
         AudioManager.Instance.PlayButtonClick();
         AudioManager.Instance.Togglemute();
+        AudioManager.Instance.PlayButtonClick();
 
         if (AudioManager.Instance.muted == true)
         {
